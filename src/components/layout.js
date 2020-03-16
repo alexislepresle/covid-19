@@ -1,50 +1,30 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import "./layout.sass"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-        <footer class="footer">
-          <div class="content has-text-centered">
-            <p>
-              © {new Date().getFullYear()}, Built with {` `} <a href="https://www.gatsbyjs.org">Gatsby</a> by <a href="https://www.alexislepresle.com">alexislepresle.com</a>
-            </p>
-          </div>
-        </footer>
+      <div className="columns is-centered">
+        <div className="colunm is-3">
+          <span role="img" aria-label="covid-19" className="is-size-1">🦠</span>
+        </div>
       </div>
+      <div className="columns is-centered">
+        <div className="colunm is-3">
+          <h1 className="is-size-1">COVID-19</h1>
+        </div>
+      </div>
+      {children}
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            © {new Date().getFullYear()}, Built with {` `} <a href="https://www.gatsbyjs.org">Gatsby</a> by <a href="https://www.alexislepresle.com">alexislepresle.com</a>
+          </p>
+        </div>
+      </footer>
     </>
   )
 }
