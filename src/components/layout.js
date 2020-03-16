@@ -7,17 +7,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="columns is-centered">
-        <div className="colunm is-3">
-          <span role="img" aria-label="covid-19" className="is-size-1">🦠</span>
-        </div>
-      </div>
-      <div className="columns is-centered">
-        <div className="colunm is-3">
-          <h1 className="is-size-1">COVID-19</h1>
-          <p>Data sources from this <a href="https://github.com/mathdroid/covid-19-api">API</a></p>
-        </div>
-      </div>
+      <span role="img" aria-label="covid-19" className="is-size-1 has-text-centered">🦠</span>
+      <h1 className="is-size-1 has-text-centered">COVID-19</h1>
+
       {children}
       <footer class="footer">
         <div class="content has-text-centered">
