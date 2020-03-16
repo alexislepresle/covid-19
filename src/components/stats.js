@@ -16,9 +16,9 @@ const Stats = ({url}) => {
     return (
         <>
 
-        <p className="has-text-centered">Last updated: {moment(data.lastUpdate).format('YYYY/MM/DD HH:mm ')} </p>
             {
             data&&
+                <p className="has-text-centered">Last updated: {moment(data.lastUpdate).format('YYYY/MM/DD HH:mm ')} </p>
                 <div className="columns">
                     <BlockStat data={numberWithCommas(data.confirmed.value)} subtitle="Confirmed" color="has-text-warning" />
                     <BlockStat data={numberWithCommas(data.recovered.value)} subtitle="Recovered" color="has-text-success" />
