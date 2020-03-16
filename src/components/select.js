@@ -10,7 +10,7 @@ const Select = () => {
     return (
         <>
         <div className="columns is-centered">
-            <div className="column is-5">
+            <div className="column is-3">
                 <div className="select">
                     <select onChange={(e) => {setSelectedCountry(e.target.value)}}>
                         {
