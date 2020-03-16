@@ -5,8 +5,8 @@ import Chart from './chart'
 const Select = () => {
     const {data, loading, error } = Api('https://covid19.mathdro.id/api/countries');
     const [selectedCountry, setSelectedCountry] = useState('FRA');
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error...</p>;
+    if (loading) return <p>Loading Data...</p>;
+    if (error) return <p>Error with the data...</p>;
     return (
         <>
         <div className="columns is-centered">

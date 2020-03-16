@@ -4,6 +4,8 @@ import moment from 'moment'
 
 const Tab = () => {
     const {data, loading, error } = Api('https://covid19.mathdro.id/api/recovered');
+    if (loading) return <p>Loading Data ...</p>;
+    if (error) return <p>Error with the data...</p>;
 
     return (
         <>

@@ -4,6 +4,8 @@ import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts'
 const Chart = ({url}) => {
 
     const { data, loading, error } = Api(url);
+    if (loading) return <p>Loading Data ...</p>;
+    if (error) return <p>Error with the data...</p>;
 
     return (
         <AreaChart width={800} height={400} data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }} style={{margin : "auto"}}>

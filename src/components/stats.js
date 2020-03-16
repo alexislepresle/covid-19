@@ -1,10 +1,13 @@
 import React from 'react';
 import Api from '../utils/api'
 import BlockStat from "./blockStat"
+import moment from 'moment'
+
 const Stats = ({url}) => {
     const {data, loading, error } = Api(url);
-    if (loading) return <p>Loading data ...</p>;
-    if (error) return <p>No Data Available Today ...</p>;
+    if (loading) return <p>Loading Data ...</p>;
+    if (error) return <p>Error with the data...</p>;
+
 
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -12,6 +15,8 @@ const Stats = ({url}) => {
 
     return (
         <>
+
+        <p className="has-text-centered">Last updated: {moment(data.lastUpdate).format('YYYY/MM/DD HH:mm ')} </p>
             {
             data&&
                 <div className="columns">
