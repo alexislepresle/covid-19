@@ -1,46 +1,43 @@
 import React from "react"
 
 import Layout from "../components/layout"
+import Stats from "../components/stats"
+import Select from "../components/select"
 import SEO from "../components/seo"
-import Api from "../utils/api"
+import Chart from "../components/chart"
 
 const IndexPage = () => {
-  const {data, loading, error } = Api('https://covid19.mathdro.id/api/confirmed');
 
-  return(
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    {data &&
-    
-    <table className="table">
-      <thead>
-        <tr>
-          <th>Country</th>
-          <th>Case</th>
-          <th>Died</th>
-          <th>Recover</th>
-          <th>Last update</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          console.log("data "+data),
-          data.map((country, code) => (
-            <tr key={code}>
-              <td>{country.countryRegion}</td>
-              <td>{country.confirmed}</td>
-              <td>{country.deaths}</td>
-              <td>{country.recovered}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
-    }
-    
-
-  </Layout>
-)}
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <div className="columns is-centered">
+        <div className="colunm is-3">
+          <span role="img" aria-label="covid-19" className="is-size-1">🦠</span>
+        </div>
+      </div>
+      <div className="columns is-centered">
+        <div className="colunm is-3">
+          <h1 className="is-size-1">COVID-19</h1>
+        </div>
+      </div>
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container">
+            <Stats url="https://covid19.mathdro.id/api/" />
+            <Chart url="https://covid19.mathdro.id/api/daily"/>
+          </div>
+        </div>
+      </section>
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container">
+            <Select />
+          </div>
+        </div>
+      </section>
+    </Layout>
+  )
+}
 
 export default IndexPage

@@ -5,12 +5,18 @@ function Api(url) {
   const [data, setData] = useState();
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     async function fetchData() {
         setIsLoading(true);
+        setError();
+
         const result = await axios(url)
-        .catch(error =>setError(error));
-        setData(result.data)
+            .catch(error =>{
+                setError(error)
+            });
+
+         setData(result.data)
         setIsLoading(false);
     }
     fetchData();

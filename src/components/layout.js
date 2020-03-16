@@ -9,7 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.sass"
 
 const Layout = ({ children }) => {
@@ -25,7 +24,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
@@ -38,6 +36,13 @@ const Layout = ({ children }) => {
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              © {new Date().getFullYear()}, Built with {` `} <a href="https://www.gatsbyjs.org">Gatsby</a> by <a href="https://www.alexislepresle.com">alexislepresle.com</a>
+            </p>
+          </div>
         </footer>
       </div>
     </>
