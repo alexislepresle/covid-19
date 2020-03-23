@@ -3,10 +3,10 @@
 🦠
 </h1>
 <h1 align="center">
-  Dashboard in React with Covid-19
+  Dashboard in Gatsby JS with Covid-19 data
 </h1>
 
-## DEMO
+## Demo
 
 - The link is :  [https://covid-19-app.netlify.com/](https://covid-19-app.netlify.com/)
 
