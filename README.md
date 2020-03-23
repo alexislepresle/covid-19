@@ -6,6 +6,10 @@
   Dashboard in React with Covid-19
 </h1>
 
+## DEMO
+
+- The link is :  [https://covid-19-app.netlify.com/](https://covid-19-app.netlify.com/)
+
 ## Instalation
 
 - `git clone git@github.com:alexislepresle/covid-19.git`
