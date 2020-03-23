@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
+<h1 align="center">
 🦠
-</p>
+</h1>
 <h1 align="center">
   Dashboard in React with Covid-19
 </h1>
