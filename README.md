@@ -14,6 +14,10 @@
 - `gatsby develop`
 - Visit http://localhost:8000
 
+## Data Source
+
+Data source from [https://covid19.mathdro.id](https://github.com/mathdroid/covid-19-api) API
+
 
 
 <!-- AUTO-GENERATED-CONTENT:END -->
