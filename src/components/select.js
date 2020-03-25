@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import Api from '../utils/api'
 import Stats from './stats'
-import Chart from './chart'
 const Select = () => {
     const {data, loading, error } = Api('https://covid19.mathdro.id/api/countries');
     const [selectedCountry, setSelectedCountry] = useState('FRA');
@@ -15,13 +14,14 @@ const Select = () => {
                     <select onChange={(e) => {setSelectedCountry(e.target.value)}}>
                         {
                             data && 
-                            Object.entries(data.countries).map(([country, code]) =>(
+                            data.countries.map((country, i) =>(
+                                console.log(country),
                                 <option 
-                                key={code} 
-                                value={data.iso3[code]}
-                                selected={selectedCountry === data.iso3[code]}
+                                key={i} 
+                                value={country.iso3}
+                                selected={selectedCountry === country.iso3}
                                 >
-                                    {country}
+                                    {country.name}
                                 </option>
                             ))      
                         }

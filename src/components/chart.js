@@ -10,11 +10,12 @@ const Chart = ({url}) => {
     return (
         <AreaChart width={800} height={400} data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }} style={{margin : "auto"}}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="reportDateString" />
+            <XAxis dataKey="reportDate" />
             <YAxis />
             <Tooltip />
-            <Area type='monotone' dataKey='totalConfirmed' stroke='#6f6024' fill='#ffdd57' />
-            <Area type='monotone' dataKey='totalRecovered' stroke='#285d3a' fill='#48c774' />
+            <Area type='monotone' dataKey='confirmed.total' stroke='#6f6024' fill='#ffdd57' />
+            <Area type='monotone' dataKey='recovered.total' stroke='#285d3a' fill='#48c774' />
+            <Area type='monotone' dataKey='deaths.total' stroke='#f14668' fill='#671c2b' />
 
         </AreaChart>
     );
